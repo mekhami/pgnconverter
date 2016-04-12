@@ -1,6 +1,7 @@
 class Game(object):
     def __init__(self, pgn):
-        self.pgn = open(pgn, "r")
+        self.pgn = pgn
 
     def move_list(self):
-        return self.pgn.readlines()[8]
+        with open(self.pgn) as f:
+            return f.readlines()[8]
